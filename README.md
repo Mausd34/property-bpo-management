@@ -1,23 +1,29 @@
 # Property & BPO Management System
 
-Professional workflow platform for property preservation and BPO operations.
+Operations platform for property preservation and BPO workflows, with property records, vendor work orders, SLA-oriented statuses, and dashboard metrics.
 
-## Core modules
-- Properties and owners
-- Vendors and assignments
-- Work orders and SLA tracking
-- Status workflow and priorities
-- Dashboard-ready REST API
-- PostgreSQL-ready data layer design
+## Features
+- Property and client records
+- Vendor/work-order workflow
+- Priority and status tracking
+- Operations dashboard at `/`
+- REST API and Swagger at `/docs`
+- Health endpoint and automated tests
+- Docker-ready deployment
 
 ## Stack
-Python · FastAPI · SQLAlchemy · PostgreSQL · Docker
+Python · FastAPI · Pydantic · PostgreSQL-ready architecture · Docker
 
-## Quick start
+## Run locally
 ```bash
 python -m venv .venv
-# Windows: .venv\Scripts\activate
+.venv\Scripts\activate
 pip install -r requirements.txt
 uvicorn api:app --reload
 ```
-Open `http://127.0.0.1:8000/docs`.
+Open `http://127.0.0.1:8000/`.
+
+## Core API
+`POST /properties`, `GET /properties`, `POST /work-orders`, `GET /work-orders`, `PATCH /work-orders/{id}`, and `GET /dashboard`.
+
+> Demo workflow application. Add authentication, persistent database storage, audit logging, and organization-specific SLA rules before production use.
